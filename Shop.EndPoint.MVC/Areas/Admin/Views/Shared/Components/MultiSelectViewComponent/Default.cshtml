@@ -1,0 +1,16 @@
+﻿@using Shop.Application.Contract.Dtos.Products
+@model MultiSelectViewDto
+<div class="form-check">
+    @foreach (var item in @Model.KeyValues)
+    {
+        <input class="form-check-input" type="checkbox" name="SelectedTShirtSizes" value="@item.Value" id="flexCheckDefault" @((Model.SelectedCheckBoxes.Any(x =>x== item.Value)?
+           "checked":""))>
+        <label class="form-check-label" for="flexCheckDefault">
+            @item.Key
+        </label>
+        <br />
+        <br />
+        <br />
+    }
+
+</div>

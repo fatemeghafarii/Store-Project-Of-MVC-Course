@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .my-border {
+            border: 5px solid Blue
+        }
+
+        .my-border2 {
+            border: 5px solid green
+        }
+    </style>
+
+    <link rel="stylesheet" href="wwwroot/css/MyStyleSheet.css">
+</head>
+
+<body>
+    <a href="#id-demo">Click</a>
+    <h1 style="border:5px solid red">This is Web</h1>
+
+    <h1 class="my-border">This is Web2</h1>
+
+    <div class="my-border correct-height project-height ">
+
+        <ol>
+            <li><lable>External Lable</lable></li>
+        </ol>
+
+        <ul>
+            <li><lable class="my-border">HEllo</lable></li>
+            <li><a href="#">Hi</a></li>
+            <li><a href="#" id="exception-li">Ok</a></li>
+            <li><a href="#">Bye</a></li>
+        </ul>
+
+    </div>
+
+    <div class="float" style="border:5px solid red">
+        <div id="id-demo" class="my-border inline">
+            <lable>Hi</lable>
+
+        </div>
+
+        <div class="my-border inline" style="height:300px">
+
+            <lable>Bye</lable>
+        </div>
+
+        <div id="id-demo" class="my-border2 inline margin">
+            <div class="my-border padding" style="height:100px"><lable>Hi</lable></div>
+
+
+        </div>
+        <!-- <br>-->
+        <div class="clear"></div>
+        <div id="id-demo" class="my-border">
+            <lable>Hi</lable>
+
+        </div>
+    </div>
+    <div class="my-border inline" style="height:200px; width:2000px">
+
+        <lable>Bye</lable>
+
+        <lable class="my-border" style="height:100px">Hi</lable>
+    </div>
+</body>
+</html>

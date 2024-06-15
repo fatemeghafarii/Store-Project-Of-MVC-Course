@@ -1,0 +1,29 @@
+﻿@page
+@model CreateModel
+@{
+}
+<form method="post" asp-page="Create" enctype="multipart/form-data">
+    <br>
+    <img src="" width="200px" height="200px" alt="" />
+    <div class="form-group">
+        <input asp-for="Product.Image" type="file" name="Image" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Product.Name">Name</label>
+        <input asp-for="Product.Name" type="text" name="Name" class="form-control" placeholder="Enter name">
+        <span asp-validation-for="Product.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Product.Description">Description</label>
+        <input asp-for="Product.Description" type="text" name="Description" class="form-control" placeholder="Enter Description">
+    </div>
+    <div class="form-check">
+        <label asp-for="Product.Quantity">Quantity</label>
+        <input asp-for="Product.Quantity" type="number" name="Quantity" class="form-control" placeholder="Enter Quantity">
+    </div>
+
+@*
+    @await Component.InvokeAsync("MultiSelectViewComponent",@Model.Product.SelectedTShirtSizes)*@
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,41 @@
+﻿@using Shop.Application.Contract.Dtos.Products.Panels
+@model ProductAddDto
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" action="http://localhost:5295/Products/Create" enctype="multipart/form-data">
+    <br>
+    <img src="" width="200px" height="200px" alt="" />
+    <div class="form-group">
+        <input asp-for="Image" type="file" name="Image" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" type="text" name="Name" class="form-control" placeholder="Enter name">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" type="text" name="Description" class="form-control" placeholder="Enter Description">
+    </div>
+    <div class="form-check">
+        <label asp-for="Quantity">Quantity</label>
+        <input asp-for="Quantity" type="number" name="Quantity" class="form-control" placeholder="Enter Quantity">
+    </div>
+
+    @* @Html.RenderPartialAsync("MultiSelectPartialView",new MultiSelectViewDto{
+        SelectedCheckBoxes=@Model.SelectedTShirtSizes,
+        KeyValues=@Model.TShirtSizes
+        })*@
+
+    @* <Partial name="MultiSelectPartialView" model=@((new MultiSelectViewDto{
+        SelectedCheckBoxes=@Model.SelectedTShirtSizes,
+        KeyValues=@Model.TShirtSizes
+        }))></Partial>*@
+
+
+    @await Component.InvokeAsync("MultiSelectViewComponent",@Model.SelectedTShirtSizes)
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

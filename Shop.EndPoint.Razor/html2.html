@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="C:\BootCamp236\Web1\S10\Shop.EndPoint.MVC\Shop.EndPoint.MVC\wwwroot\css\bootstrap.css" />
+</head>
+<body onload="CreateCard();">
+
+    <p id="P-id">Elham Asked a question?</p>
+
+    <!--<button onclick="setInnerHTML();alertFinish()">Change Html</button>-->
+
+    <button onclick="setInnerHTML();">Change Html</button>
+    <button onclick="addInputElement();">Add+</button>
+
+    <div id="CardsContainer"></div>
+
+    <script>
+        //setInnerHTML();
+
+        function setInnerHTML() {
+            var pElement = document.getElementById("P-id");
+            pElement.innerHTML = 'Master Answered';
+            alertFinish();
+        }
+
+        function alertFinish() {
+            alert("Finish");
+        }
+
+        function addInputElement() {
+            var inputElement = document.createElement('input');
+            var brElement = document.createElement('br');
+            document.body.appendChild(brElement);
+            document.body.appendChild(inputElement);
+        }
+
+        function CreateCard() {
+            let cardTemplate =
+                `<div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybLdwcvSTquGXWl3afR6SSkwM4n9d7O19J9nCuAOC2U2WDu2Gm5V4qfS5IMN95Eph5z0&usqp=CAU" alt = "Card image cap" >
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.Description</p>
+                                <label>@item.Sizes</label>
+                                <a href="#" class="btn btn-primary">More1</a>
+                                <a >More</a>
+                    </div >
+                </div >`
+            var cardsContainer = document.getElementById("P-id");
+           
+            var cards = '';
+            for (var i = 0; i < 10; i++) {
+                cards += cardTemplate
+            }
+            cardsContainer.innerHTML = cards;
+        }
+
+    </script>
+</body>
+</html>
